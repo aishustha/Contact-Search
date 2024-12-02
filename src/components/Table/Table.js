@@ -1,11 +1,20 @@
 import "./Table.css";
 
-export const Table = ({results}) => {
+export const Table = ({results, onSelectContact}) => {
+    const handleCheckBox = (contactDetail, e) => {
+        if(e.target.checked) {
+            onSelectContact(contactDetail);
+        } else {
+            onSelectContact(null);
+        }
+    }
+
   return (
     <section className="tableSection">
         <table className="formTable">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Name</th>
                     <th>DOB</th>
                     <th>Address</th>
@@ -19,7 +28,15 @@ export const Table = ({results}) => {
             <tbody>
                 {results.length > 0 ? (
                     results.map((result, index) => (
-                    <tr key={index}>
+                    <tr>
+                        <td>
+                            <input
+                                type="checkbox"
+                                checked={result.email === onSelectContact?.email}
+                                onChange={(e) => handleCheckBox(result, e)}
+                                className="checkbox"
+                            />
+                        </td>
                         <td>{`${result.fname} ${result.lname}`}</td>
                         <td>{result.dateofbirth}</td>
                         <td>{result.address}</td>
@@ -32,7 +49,7 @@ export const Table = ({results}) => {
                     ))
                 ) : (
                     <tr>
-                    <td colSpan="8">No contacts found.</td>
+                    <td colSpan="9">No Data Found.</td>
                     </tr>
                 )}
                 </tbody>

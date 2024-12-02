@@ -7,8 +7,9 @@ import { useState } from 'react';
 
 function App() {
   const [filterContact, setFilterContact] = useState(data);
-  
-  // each contactDetail in data.json is check - to verify whether the filters provided in the filters match or not.
+  const [selectContact, setSelectContact] = useState(null);
+
+  // each contactDetail in data.json is checked - to verify whether the filters provided in the filters match or not.
   const handleSearch = (filters) => {
     const filterData = data.filter((contactDetail) => {
       return (
@@ -22,10 +23,24 @@ function App() {
     setFilterContact(filterData);
   }
 
+  const handleSelectContact = (contactDetail) => {
+    setSelectContact(contactDetail);
+  }
+
+  const handleUpdateDetail = (updateDetails) => {
+    const updateDetail = filterContact.map((contactDetail) => 
+      contactDetail.email === updateDetails.email ? updateDetails : contactDetail
+    );
+    setFilterContact(updateDetail);
+    setSelectContact(updateDetails);
+    alert("Contact updated successfully!");
+  }
+
+
   return (
     <div className="App">
-      <Form onSearch = {handleSearch} />
-      <Table results = {filterContact}/>
+      <Form onSearch = {handleSearch} selectContact={selectContact} onUpdateDetail={handleUpdateDetail}/>
+      <Table results = {filterContact} onSelectContact={handleSelectContact}/>
       <Pagination />
     </div>
   );
