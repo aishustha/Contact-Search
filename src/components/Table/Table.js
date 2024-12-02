@@ -1,6 +1,6 @@
 import "./Table.css";
 
-export const Table = () => {
+export const Table = ({results}) => {
   return (
     <section className="tableSection">
         <table className="formTable">
@@ -17,17 +17,25 @@ export const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Rajiv Sharma</td>
-                    <td>1986-02-12</td>
-                    <td>1001 Noble St Ste 1</td>
-                    <td>Fair Banks</td>
-                    <td>AK</td>
-                    <td>99701</td>
-                    <td>rajivsharma@gmail.com</td>
-                    <td>2667899999</td>
-                </tr>
-            </tbody>
+                {results.length > 0 ? (
+                    results.map((result, index) => (
+                    <tr key={index}>
+                        <td>{`${result.fname} ${result.lname}`}</td>
+                        <td>{result.dateofbirth}</td>
+                        <td>{result.address}</td>
+                        <td>{result.city}</td>
+                        <td>{result.state}</td>
+                        <td>{result.zip}</td>
+                        <td>{result.email}</td>
+                        <td>{result.phone}</td>
+                    </tr>
+                    ))
+                ) : (
+                    <tr>
+                    <td colSpan="8">No contacts found.</td>
+                    </tr>
+                )}
+                </tbody>
         </table>
     </section>
   )

@@ -1,0 +1,24 @@
+[
+    {
+       "fname": "Rajeev",
+       "lname": "Sharma",
+       "dateofbirth": "1986-02-12",
+       "address": "1001 NOBLE ST STE 1",
+       "city": "FAIRBANKS",
+       "state": "AK",
+       "zip": "99701",
+       "email": "rajeevsharma@gmail.com",
+       "phone": "2582528582"
+    },
+    {
+        "fname": "Eesha",
+        "lname": "Sharma",
+        "dateofbirth": "1995-07-04",
+        "address": "4821 RIDGE TOP CIR",
+        "city": "ANCHORAGE",
+        "state": "AK",
+        "zip": "99508",
+        "email": "eeshasharma@gmail.com",
+        "phone": null
+     }
+]
