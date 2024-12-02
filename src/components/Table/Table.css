@@ -1,0 +1,15 @@
+.tableSection {
+    margin: 0px 100px;
+ }
+
+.formTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.formTable th, .formTable td {
+    border-bottom: 1px solid var(--theme-border-color);
+    padding: 10px;
+    text-align: left;
+}
+

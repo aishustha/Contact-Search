@@ -1,0 +1,16 @@
+.paginationSection {
+    margin: 20px 100px;
+    align-items: center;
+    justify-content: right;
+    text-align: right;
+    color: var(--theme-chevron-color);
+    font-size: 20px;
+}
+
+.paginationBtn {
+    background: var(--theme-btn-color);
+    color: var(--theme-btn-text-color);
+    border: 0px;
+    padding: 5px 15px;
+    margin: 0px 10px;
+}

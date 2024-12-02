@@ -1,0 +1,71 @@
+.contactSection {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    margin: 0px 100px;
+ }
+
+.formGrid {
+    display: flex;
+    justify-content: space-between;
+    color: var(--theme-label-color);
+    width: 100%;
+}
+
+
+.formGrid input, .formGrid select {
+    border: 1px solid var(--theme-border-color);
+    border-radius: 4px;
+    padding: 7px;
+    color: var(--theme-label-color);
+    width: 100%;
+}
+
+.formGrid .formAddress  {
+    width: 445px;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.formLabel {
+    display: grid;
+    margin-bottom: 20px;
+}
+
+.formAsterik {
+    color: var(--theme-asterik);
+}
+
+.searchBtn {
+    margin-bottom: 20px;
+    background: none;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 4px;
+    color: var(--theme-btn-color);
+    padding: 7px 20px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .formGrid {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .formRow {
+        flex-direction: column;
+        gap: normal;
+    }
+    .formAddress {
+        width: auto !important;
+    }
+
+}
