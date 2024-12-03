@@ -158,7 +158,7 @@ export const Form = ({onSearch, selectContact, onUpdateDetail}) => {
                                 onChange={handleChange}
                             >
                                 <option value="">Choose</option>
-                                {["AK" ].map((state) => (
+                                {["AK", "CA" ].map((state) => (
                                     <option key={state} value={state}>
                                         {state}
                                     </option>
