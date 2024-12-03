@@ -17,3 +17,9 @@
     overflow-x: scroll;
 }
 
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 4px;
+}

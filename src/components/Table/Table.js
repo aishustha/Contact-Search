@@ -1,11 +1,11 @@
 import "./Table.css";
 
-export const Table = ({results, onSelectContact}) => {
+export const Table = ({results, contact}) => {
     const handleCheckBox = (contactDetail, e) => {
         if(e.target.checked) {
-            onSelectContact(contactDetail);
+            contact(contactDetail);
         } else {
-            onSelectContact(null);
+            contact(null);
         }
     }
 
@@ -28,11 +28,10 @@ export const Table = ({results, onSelectContact}) => {
             <tbody>
                 {results.length > 0 ? (
                     results.map((result, index) => (
-                    <tr>
+                    <tr key={result.email || index}>
                         <td>
                             <input
                                 type="checkbox"
-                                checked={result.email === onSelectContact?.email}
                                 onChange={(e) => handleCheckBox(result, e)}
                                 className="checkbox"
                             />

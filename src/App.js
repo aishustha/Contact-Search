@@ -29,7 +29,7 @@ function App() {
 
   const handleUpdateDetail = (updateDetails) => {
     const updateDetail = filterContact.map((contactDetail) => 
-      contactDetail.email === updateDetails.email ? updateDetails : contactDetail
+      contactDetail.email === selectContact.email ? updateDetails : contactDetail
     );
     setFilterContact(updateDetail);
     setSelectContact(updateDetails);
@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <Form onSearch = {handleSearch} selectContact={selectContact} onUpdateDetail={handleUpdateDetail}/>
-      <Table results = {filterContact} onSelectContact={handleSelectContact}/>
+      <Table results = {filterContact} contact={handleSelectContact}/>
       <Pagination />
     </div>
   );

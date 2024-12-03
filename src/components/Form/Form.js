@@ -33,7 +33,7 @@ export const Form = ({onSearch, selectContact, onUpdateDetail}) => {
 
     const handleChange = (e) => {
         const {name, value} = e.target;
-        setFilterBased({...filterBased, [name]: value});
+        setFilterBased((prev) => ({ ...prev, [name]: value }));
     }
 
     const handleSubmit = (e) => {
