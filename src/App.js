@@ -17,7 +17,12 @@ function App() {
         (filters.lname ? contactDetail.lname.toLowerCase().includes(filters.lname.toLowerCase()) : true) &&
         (filters.dateofbirth ? contactDetail.dateofbirth === filters.dateofbirth : true) &&
         (filters.email ? contactDetail.email.toLowerCase().includes(filters.email.toLowerCase()) : true) &&
-        (filters.phone ? contactDetail.phone.includes(filters.phone) : true)
+        (filters.phone ? contactDetail.phone.includes(filters.phone) : true)&&
+        (filters.address ? contactDetail.address.includes(filters.address) : true)&&
+        (filters.city ? contactDetail.city.includes(filters.city) : true)&&
+        (filters.state ? contactDetail.state.includes(filters.state) : true)&&
+        (filters.zip ? contactDetail.zip.includes(filters.zip) : true)
+
       );
     });
     setFilterContact(filterData);
