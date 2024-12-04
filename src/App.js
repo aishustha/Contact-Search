@@ -8,6 +8,8 @@ import data from "./data.json";
 function App() {
   const [filterContact, setFilterContact] = useState(data);
   const [selectContact, setSelectContact] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 5;
 
   // each contactDetail in data.json is checked - to verify whether the filters provided in the filters match or not.
   const handleSearch = (filters) => {
@@ -39,12 +41,8 @@ function App() {
     );
     setFilterContact(updateDetail);
     setSelectContact(updateDetails);
-    alert("Contact updated successfully!");
+    alert("Contact Details Updated Successfully!");
   }
-
-  //pagination
-  const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 5;
 
   const handleNext = () => {
     if (currentPage + 1 < Math.ceil(filterContact.length / itemsPerPage)) {
