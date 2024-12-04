@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import './App.css';
 import {Form} from "./components/Form/Form";
 import {Table} from "./components/Table/Table";
 import {Pagination} from './components/Pagination/Pagination';
 import data from "./data.json";
-import { useState } from 'react';
 
 function App() {
   const [filterContact, setFilterContact] = useState(data);
@@ -13,14 +13,15 @@ function App() {
   const handleSearch = (filters) => {
     const filterData = data.filter((contactDetail) => {
       return (
-        (filters.fname ? contactDetail.fname.includes(filters.fname) : true) &&
-        (filters.lname ? contactDetail.lname.includes(filters.lname) : true) &&
+        (filters.fname ? contactDetail.fname.toLowerCase().includes(filters.fname.toLowerCase()) : true) &&
+        (filters.lname ? contactDetail.lname.toLowerCase().includes(filters.lname.toLowerCase()) : true) &&
         (filters.dateofbirth ? contactDetail.dateofbirth === filters.dateofbirth : true) &&
-        (filters.email ? contactDetail.email.includes(filters.email) : true) &&
+        (filters.email ? contactDetail.email.toLowerCase().includes(filters.email.toLowerCase()) : true) &&
         (filters.phone ? contactDetail.phone.includes(filters.phone) : true)
       );
     });
     setFilterContact(filterData);
+    setCurrentPage(0);
   }
 
   const handleSelectContact = (contactDetail) => {
@@ -36,12 +37,40 @@ function App() {
     alert("Contact updated successfully!");
   }
 
+  //pagination
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 5;
+
+  const handleNext = () => {
+    if (currentPage + 1 < Math.ceil(filterContact.length / itemsPerPage)) {
+      setCurrentPage((prev) => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
+
+  const startIndex = currentPage * itemsPerPage;
+  const paginatedData = filterContact.slice(startIndex, startIndex + itemsPerPage);
+
+  const totalItems = filterContact.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
     <div className="App">
       <Form onSearch = {handleSearch} selectContact={selectContact} onUpdateDetail={handleUpdateDetail}/>
-      <Table results = {filterContact} contact={handleSelectContact}/>
-      <Pagination />
+      <Table results={paginatedData} contact={handleSelectContact} />
+      <Pagination
+        currentPage={currentPage + 1}
+        totalItems={totalItems}
+        itemsPerPage={itemsPerPage}
+        totalPages={totalPages}
+        onNext={handleNext}
+        onPrev={handlePrev}
+      />
     </div>
   );
 }

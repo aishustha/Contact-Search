@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import "./Table.css";
 
 export const Table = ({results, contact}) => {
+    const [selectedCheckbox, setSelectedCheckbox] = useState(null);
+
     const handleCheckBox = (contactDetail, e) => {
         if(e.target.checked) {
+            setSelectedCheckbox(contactDetail);
             contact(contactDetail);
         } else {
+            setSelectedCheckbox(null);
             contact(null);
         }
     }
@@ -32,6 +37,7 @@ export const Table = ({results, contact}) => {
                         <td>
                             <input
                                 type="checkbox"
+                                checked={selectedCheckbox?.email === result.email}  
                                 onChange={(e) => handleCheckBox(result, e)}
                                 className="checkbox"
                             />

@@ -20,5 +20,93 @@
         "zip": "99508",
         "email": "eeshasharma@gmail.com",
         "phone": ""
-     }
+     },
+     {
+      "fname": "Sujit",
+      "lname": "Bhandari",
+      "dateofbirth": "1988-09-21",
+      "address": "789 Oak St",
+      "city": "Lalitpur",
+      "state": "Bagmati",
+      "zip": "44700",
+      "email": "sujit@example.com",
+      "phone": "9811234567"
+    },
+    {
+      "fname": "Anjali",
+      "lname": "Thapa",
+      "dateofbirth": "1993-03-15",
+      "address": "101 Pine St",
+      "city": "Biratnagar",
+      "state": "Province No. 1",
+      "zip": "56700",
+      "email": "anjali@example.com",
+      "phone": "9851234567"
+    },
+    {
+      "fname": "Bikash",
+      "lname": "Basnet",
+      "dateofbirth": "1992-07-18",
+      "address": "202 Cedar St",
+      "city": "Chitwan",
+      "state": "Bagmati",
+      "zip": "44200",
+      "email": "bikash@example.com",
+      "phone": "9821234567"
+    },
+    {
+      "fname": "Shyam",
+      "lname": "Singh",
+      "dateofbirth": "1989-08-25",
+      "address": "765 Elm St",
+      "city": "Kathmandu",
+      "state": "Bagmati",
+      "zip": "44600",
+      "email": "shyam.singh@example.com",
+      "phone": "9809876543"
+    },
+    {
+      "fname": "Maya",
+      "lname": "Joshi",
+      "dateofbirth": "1991-04-30",
+      "address": "123 Maple St",
+      "city": "Pokhara",
+      "state": "Kaski",
+      "zip": "33700",
+      "email": "maya.joshi@example.com",
+      "phone": "9812345678"
+    },
+    {
+      "fname": "Pooja",
+      "lname": "Koirala",
+      "dateofbirth": "1994-12-05",
+      "address": "456 Pine Ave",
+      "city": "Lalitpur",
+      "state": "Bagmati",
+      "zip": "44700",
+      "email": "pooja.koirala@example.com",
+      "phone": "9819876543"
+    },
+    {
+      "fname": "Ram",
+      "lname": "Thapa",
+      "dateofbirth": "1990-02-14",
+      "address": "987 Birch Rd",
+      "city": "Chitwan",
+      "state": "Bagmati",
+      "zip": "44200",
+      "email": "ram.thapa@example.com",
+      "phone": "9812345678"
+    },
+    {
+      "fname": "Sita",
+      "lname": "Yadav",
+      "dateofbirth": "1992-11-23",
+      "address": "234 Oak Ave",
+      "city": "Biratnagar",
+      "state": "Province No. 1",
+      "zip": "56700",
+      "email": "sita.yadav@example.com",
+      "phone": "9801234567"
+    }
 ]

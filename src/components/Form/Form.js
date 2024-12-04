@@ -158,7 +158,7 @@ export const Form = ({onSearch, selectContact, onUpdateDetail}) => {
                                 onChange={handleChange}
                             >
                                 <option value="">Choose</option>
-                                {["AK", "CA" ].map((state) => (
+                                {["AK", "Bagmati", "Province No. 1", "Kaski" ].map((state) => (
                                     <option key={state} value={state}>
                                         {state}
                                     </option>
@@ -180,12 +180,12 @@ export const Form = ({onSearch, selectContact, onUpdateDetail}) => {
                     </div>
                 </div>
             </div>
+            
             <button type="search" className="searchBtn" onClick={handleSubmit}>Search</button>
+            
             {selectContact && (
                  <button type="submit" className="searchBtn" onClick={handleUpdate}>Update</button>
             )}
-           
-           
         </form>
     </section>
   )
